@@ -18,13 +18,15 @@
 }
 
 /* ADD FOOD CSS */
-form.addfood-form {
+form.addfood-form, form.addstudent-form {
     width: 50%;
     margin: auto;
 }
 
 form.addfood-form label,
-form.addfood-form input {
+form.addstudent-form label,
+form.addfood-form input,
+form.addstudent-form input {
     display: block;
     text-align: left;
     width: 80%;
@@ -32,17 +34,19 @@ form.addfood-form input {
     margin-bottom: 6px;
 }
 
-form.addfood-form label {
+form.addfood-form label,
+form.addstudent-form label {
     font-size: 16px;
     font-weight: 500;
 }
 
-form.addfood-form input {
+form.addfood-form input,
+form.addstudent-form input {
     outline: none;
     padding: 10px;
 }
 
-input.addfood-btn {
+input.addfood-btn, input.addstudent-btn {
     text-align: center !important;
     width: 200px !important;
     margin-top: 17px !important;
@@ -53,7 +57,8 @@ input.addfood-btn {
     transition: .3s;
 }
 
-input.addfood-btn:hover,  
+input.addfood-btn:hover,
+input.addstudent-btn:hover,  
 .fooditem-edit:hover, 
 .fooditem-delete:hover{
     border: 1px solid #2e2e2e;
@@ -75,4 +80,15 @@ h2.food-table-title {
     color: #FFFFFF;
     font-weight: 500;
     transition: .3s;
+}
+
+
+/* Student ADD FORM CSS */
+p.stdn-stts {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
 }
