@@ -19,9 +19,7 @@ const Navigation = () => {
                                 <Navbar.Toggle />
                                 <Navbar.Collapse className='justify-content-end nav-menu'>
                                     <Nav.Link as={NavLink} to="/addfood">Add Food</Nav.Link>
-                                    <Nav.Link as={NavLink} to="/editdeletefood">Edit/Delete Food</Nav.Link>
                                     <Nav.Link as={NavLink} to="/addstudent">Add Student</Nav.Link>
-                                    <Nav.Link as={NavLink} to="/editdeletestudent">Edit/Delete Student</Nav.Link>
                                     <Nav.Link as={NavLink} to="/distributefood">Distribute Food</Nav.Link>
                                 </Navbar.Collapse>
                             </Navbar>
