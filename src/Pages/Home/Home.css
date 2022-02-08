@@ -1,0 +1,18 @@
+/* HOME CSS */
+.nav-menu a {
+    text-decoration: none;
+    color: #2e2e2e;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #2e2e2e;
+    padding: 9px;
+    transition: .5s;
+    margin-right: 10px;
+}
+
+.nav-menu a:hover {
+    background-color: #2e2e2e;
+    color: #FFFFFF;
+    border-bottom: 1px solid transparent;
+}
