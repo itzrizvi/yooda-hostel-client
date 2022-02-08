@@ -23,7 +23,8 @@ form.addfood-form {
     margin: auto;
 }
 
-form.addfood-form label,form.addfood-form input {
+form.addfood-form label,
+form.addfood-form input {
     display: block;
     text-align: left;
     width: 80%;
@@ -52,8 +53,26 @@ input.addfood-btn {
     transition: .3s;
 }
 
-input.addfood-btn:hover {
+input.addfood-btn:hover,  
+.fooditem-edit:hover, 
+.fooditem-delete:hover{
     border: 1px solid #2e2e2e;
     background-color: #FFFFFF;
     color: #2e2e2e;
+}
+
+h2.food-table-title {
+    margin-top: 54px;
+}
+
+.fooditem-edit, 
+.fooditem-delete{
+    text-align: center !important;
+    padding: 5px 15px;
+    margin-top: 17px !important;
+    background-color: #2e2e2e;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: .3s;
 }
