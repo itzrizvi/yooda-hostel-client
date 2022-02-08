@@ -16,3 +16,44 @@
     color: #FFFFFF;
     border-bottom: 1px solid transparent;
 }
+
+/* ADD FOOD CSS */
+form.addfood-form {
+    width: 50%;
+    margin: auto;
+}
+
+form.addfood-form label,form.addfood-form input {
+    display: block;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 6px;
+}
+
+form.addfood-form label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+form.addfood-form input {
+    outline: none;
+    padding: 10px;
+}
+
+input.addfood-btn {
+    text-align: center !important;
+    width: 200px !important;
+    margin-top: 17px !important;
+    background-color: #2e2e2e;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: .3s;
+}
+
+input.addfood-btn:hover {
+    border: 1px solid #2e2e2e;
+    background-color: #FFFFFF;
+    color: #2e2e2e;
+}
