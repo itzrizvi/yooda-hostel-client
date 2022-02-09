@@ -33,7 +33,7 @@ const FoodRow = ({ singleFood }) => {
             })
     }
 
-    // Delete Order Function
+    // Delete Food Function
     const handleDelete = id => {
         const proceed = window.confirm('Are You sure you want to delete this Food Item??');
         if (proceed) {

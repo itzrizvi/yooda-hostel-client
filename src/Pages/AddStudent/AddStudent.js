@@ -137,6 +137,24 @@ const AddStudent = () => {
 
     }
 
+    // Delete Student Function
+    const handleDeleteStudent = id => {
+        const proceed = window.confirm('You Sure you want to delete this student data??');
+        if (proceed) {
+            fetch(`http://localhost:5000/Student/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('A Student Data Deleted Successfully!!');
+                        // Reloading window for not updating restOrders after calling it though
+                        window.location.reload();
+                    }
+                });
+        }
+    }
+
     return (
         <div>
             <Navigation />
@@ -251,7 +269,7 @@ const AddStudent = () => {
                                         <Button className='studentdatadelete-btn' onClick={() => handleShow(singleStudent)}>
                                             Edit
                                         </Button>
-                                        <Button className='studentdatadelete-btn'>
+                                        <Button className='studentdatadelete-btn' onClick={() => handleDeleteStudent(singleStudent._id)}>
                                             Delete
                                         </Button>
                                     </td>
