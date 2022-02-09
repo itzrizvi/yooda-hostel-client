@@ -35,7 +35,7 @@ const AddStudent = () => {
         e.preventDefault();
         console.log(updatedStudent);
 
-        const url = `http://localhost:5000/Student/${selectedStudent._id}`;
+        const url = `https://shielded-scrubland-37581.herokuapp.com/Student/${selectedStudent._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -81,7 +81,7 @@ const AddStudent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(student);
-        fetch(`http://localhost:5000/Student/`, {
+        fetch(`https://shielded-scrubland-37581.herokuapp.com/Student/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const AddStudent = () => {
 
     // FETCH All Students FOR TABLE
     useEffect(() => {
-        fetch(`http://localhost:5000/Student/`)
+        fetch(`https://shielded-scrubland-37581.herokuapp.com/Student/`)
             .then(res => res.json())
             .then(data => setAllStudents(data));
     }, [student]);
@@ -118,7 +118,7 @@ const AddStudent = () => {
             isStatus
         }
 
-        const url = `http://localhost:5000/Student/`;
+        const url = `https://shielded-scrubland-37581.herokuapp.com/Student/`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -141,7 +141,7 @@ const AddStudent = () => {
     const handleDeleteStudent = id => {
         const proceed = window.confirm('You Sure you want to delete this student data??');
         if (proceed) {
-            fetch(`http://localhost:5000/Student/${id}`, {
+            fetch(`https://shielded-scrubland-37581.herokuapp.com/Student/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

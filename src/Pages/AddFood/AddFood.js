@@ -22,7 +22,7 @@ const AddFood = () => {
     // Form Submit Function
     const handleSubmit = async (e) => {
         e.preventDefault();
-        fetch(`http://localhost:5000/FoodItem/`, {
+        fetch(`https://shielded-scrubland-37581.herokuapp.com/FoodItem/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const AddFood = () => {
 
     // FETCH FOOD ITEM FOR TABLE
     useEffect(() => {
-        fetch(`http://localhost:5000/FoodItem/`)
+        fetch(`https://shielded-scrubland-37581.herokuapp.com/FoodItem/`)
             .then(res => res.json())
             .then(data => setAllFoods(data));
     }, [food, allFoods]);

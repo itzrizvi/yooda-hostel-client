@@ -20,7 +20,7 @@ const DistributeFood = () => {
 
     // Getting All Distributed Data
     useEffect(() => {
-        fetch(`http://localhost:5000/Distribution/`)
+        fetch(`https://shielded-scrubland-37581.herokuapp.com/Distribution/`)
             .then(res => res.json())
             .then(data => {
                 data.map(singleData => setDsitributed(singleData))
@@ -39,7 +39,7 @@ const DistributeFood = () => {
         if (distributed.date === foodDistribute.date && distributed.shift === foodDistribute.shift) {
             alert('Already Served');
         } else {
-            fetch(`http://localhost:5000/Distribution/`, {
+            fetch(`https://shielded-scrubland-37581.herokuapp.com/Distribution/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const DistributeFood = () => {
     // Serach by Roll Function
     const handleSearch = (e) => {
         e.preventDefault();
-        const url = `http://localhost:5000/Student/${searchRoll}`;
+        const url = `https://shielded-scrubland-37581.herokuapp.com/Student/${searchRoll}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setStudent(data))
@@ -69,7 +69,7 @@ const DistributeFood = () => {
 
     // FETCH FOOD ITEM FOR TABLE
     useEffect(() => {
-        fetch(`http://localhost:5000/FoodItem/`)
+        fetch(`https://shielded-scrubland-37581.herokuapp.com/FoodItem/`)
             .then(res => res.json())
             .then(data => setFoodItems(data));
     }, []);

@@ -16,7 +16,7 @@ const FoodRow = ({ singleFood }) => {
             editFoodName,
             editFoodPrice
         }
-        const url = `http://localhost:5000/FoodItem/${singleFood._id}`;
+        const url = `https://shielded-scrubland-37581.herokuapp.com/FoodItem/${singleFood._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -37,7 +37,7 @@ const FoodRow = ({ singleFood }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You sure you want to delete this Food Item??');
         if (proceed) {
-            fetch(`http://localhost:5000/FoodItem/${id}`, {
+            fetch(`https://shielded-scrubland-37581.herokuapp.com/FoodItem/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
