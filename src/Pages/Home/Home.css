@@ -92,3 +92,8 @@ p.stdn-stts {
     font-weight: 500;
     margin-top: 20px;
 }
+
+h2.student-table-title {
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
