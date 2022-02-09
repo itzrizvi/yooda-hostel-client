@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../Shared/Navigation/Navigation';
-import StudentRows from '../StudentRows/StudentRows';
 
 const AddStudent = () => {
+    // Student ID State
+    const [studentId, setStudentId] = useState([]);
+
+    // Status Change State
+    const [isStatus, setIsStatus] = useState("");
+
+
     // State for All student data
-    const [allStudents, setAllStudents] = useState([])
+    const [allStudents, setAllStudents] = useState([]);
+
     // State for posting student data
     const [student, setStudent] = useState({
         fullName: "",
@@ -35,7 +42,7 @@ const AddStudent = () => {
             .then(data => {
                 if (data.insertedId) {
                     alert('A New Student Has Been Added Successfully!!');
-                    // window.location.reload();
+                    window.location.reload();
                 }
             });
     }
@@ -46,7 +53,39 @@ const AddStudent = () => {
         fetch(`http://localhost:5000/Student/`)
             .then(res => res.json())
             .then(data => setAllStudents(data));
-    }, [student, allStudents]);
+    }, [student]);
+
+    // Getting Selected Student ID from Check Box
+    const handleStudentId = (id) => {
+        setStudentId([...studentId, id]);
+    }
+
+    // Updating Status by Bulk Action
+    const handleStatusSubmit = (e) => {
+        e.preventDefault();
+        const statusBulkUpdate = {
+            studentId,
+            isStatus
+        }
+
+        const url = `http://localhost:5000/Student/`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(statusBulkUpdate)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('Updated');
+                    setStudentId(null);
+                    window.location.reload();
+                }
+            })
+
+    }
 
     return (
         <div>
@@ -101,12 +140,31 @@ const AddStudent = () => {
                                     <th scope="col">Age</th>
                                     <th scope="col">Hall Name</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">
+                                        <form className='statusChangeButton-form' onSubmit={handleStatusSubmit}>
+                                            <button type='submit' onClick={() => setIsStatus("Active")} className='statusChange-btn'>Set Active</button>
+                                            <button type='submit' onClick={() => setIsStatus("Inactive")} className='statusChange-btn'>Set Inactive</button>
+                                        </form>
+
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {allStudents.map(singleStudent => <StudentRows
-                                    key={singleStudent._id}
-                                    singleStudent={singleStudent}></StudentRows>)}
+                                {allStudents.map(singleStudent => <tr key={singleStudent._id}>
+                                    <td style={{ fontWeight: '700' }}>{singleStudent.roll}</td>
+                                    <td style={{ fontWeight: '700' }}>{singleStudent.fullName}</td>
+                                    <td style={{ fontWeight: '700' }}>{singleStudent.class}</td>
+                                    <td style={{ fontWeight: '700' }}>{singleStudent.age}</td>
+                                    <td style={{ fontWeight: '700' }}>{singleStudent.hallName}</td>
+                                    <td style={{ fontWeight: '700' }}>{singleStudent.status}</td>
+                                    <td style={{ fontWeight: '700' }}>
+                                        <input
+                                            onClick={() => handleStudentId(singleStudent?._id)}
+                                            type="checkbox"
+                                            name="status"
+                                            id="stsChangeBulk" />
+                                    </td>
+                                </tr>)}
                             </tbody>
                         </table>
                     </div>

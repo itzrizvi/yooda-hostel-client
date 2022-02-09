@@ -12,7 +12,7 @@ const FoodRow = ({ singleFood }) => {
     // Edit Food Name Submit
     const editFoodSubmit = (e) => {
         e.preventDefault();
-        const updatedFoodName = {
+        const updatedFoodData = {
             editFoodName,
             editFoodPrice
         }
@@ -22,7 +22,7 @@ const FoodRow = ({ singleFood }) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(updatedFoodName)
+            body: JSON.stringify(updatedFoodData)
         })
             .then(res => res.json())
             .then(data => {

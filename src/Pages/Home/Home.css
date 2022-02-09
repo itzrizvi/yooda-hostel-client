@@ -97,3 +97,11 @@ h2.student-table-title {
     margin-top: 35px;
     margin-bottom: 20px;
 }
+
+.statusChange-btn {
+    margin-left: 10px;
+    border: 1px solid #2e2e2e;
+    background-color: #ffffff;
+    font-size: 13px;
+    padding: 0px 16px;
+}
