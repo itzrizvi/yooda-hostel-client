@@ -1,4 +1,20 @@
 /* HOME CSS */
+h2.home-title {
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: 700;
+    margin-top: 170px;
+    color: #FFFFFF;
+    background-color: #2e2e2e;
+}
+
+.home-bg{
+    background-image:url('../../images/food-hall.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
 .nav-menu a {
     text-decoration: none;
     color: #2e2e2e;
@@ -134,11 +150,120 @@ h2.student-table-title {
     margin: auto;
 }
 
+
+
 form.studentDataUpdate-form label,
-form.studentDataUpdate-form input {
+form.studentDataUpdate-form input,
+form.serach-form label,
+form.serach-form input{
     display: block;
     text-align: left;
     width: 80%;
     margin: auto;
     margin-bottom: 6px;
+    outline: none;
+}
+
+
+/* Food Distribution Style */
+
+.serach-form{
+    width: 400px;
+    margin:auto;
+}
+.search-btn{
+    text-align: center !important;
+    padding: 3px 15px !important;
+    margin-top: 17px !important;
+    background-color: #2e2e2e !important;
+    border: 1px solid transparent !important;
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    transition: .3s !important;
+    border-radius: 0 !important;
+}
+
+.search-btn:hover{
+    background-color: #FFFFFF !important;
+    color: #2e2e2e !important;
+    border: 1px solid #2e2e2e !important;
+}
+
+form.distribute-form {
+    width: 80%;
+    margin: auto;
+}
+
+h4.student-name {
+    font-size: 18px;
+}
+
+p.student-class {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p.student-shift {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+select#shift {
+    width: 300px;
+    padding: 7px 9px;
+    outline: none;
+}
+
+p.pick-date {
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-top: 14px;
+    font-weight: 500;
+}
+
+input#date {
+    width: 300px;
+    padding: 7px 10px;
+}
+
+p.food-items {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+select#foods {
+    display: block;
+    width: 300px;
+    margin: auto;
+    padding: 7px 10px;
+    outline: none;
+}
+
+label.serve-food {
+    margin-top: 14px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+input.servefood-btn {
+    display: block;
+    width: 200px;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #2e2e2e;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: .3s;
+}
+
+input.servefood-btn:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #2e2e2e;
+    color: #2e2e2e;
 }

@@ -148,7 +148,7 @@ const AddStudent = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('A Student Data Deleted Successfully!!');
-                        // Reloading window for not updating restOrders after calling it though
+                        // Reloading window for not updating after calling it though
                         window.location.reload();
                     }
                 });
