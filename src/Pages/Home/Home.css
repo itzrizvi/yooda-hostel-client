@@ -105,3 +105,40 @@ h2.student-table-title {
     font-size: 13px;
     padding: 0px 16px;
 }
+
+
+.studentdataedit-btn,
+.studentdatadelete-btn{
+    text-align: center !important;
+    padding: 3px 15px !important;
+    margin-top: 17px !important;
+    background-color: #2e2e2e !important;
+    border: 1px solid transparent !important;
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    margin-right: 5px !important;
+    transition: .3s !important;
+    border-radius: 0 !important;
+}
+
+.studentdataedit-btn:hover,
+.studentdatadelete-btn:hover{
+    background-color: #FFFFFF !important;
+    color: #2e2e2e !important;
+    border: 1px solid #2e2e2e !important;
+}
+
+.studentDataUpdate-form{
+    width: 90%;
+    margin: auto;
+}
+
+form.studentDataUpdate-form label,
+form.studentDataUpdate-form input {
+    display: block;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 6px;
+}
