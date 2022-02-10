@@ -118,7 +118,7 @@ const DistributeFood = () => {
                                 {foodItems.map(food => <option key={food._id} value={food.foodItem}>{food.foodItem}</option>)}
                             </select>
 
-                            <label htmlFor="servedfood" className='serve-food'>Mark as Server</label>
+                            <label htmlFor="servedfood" className='serve-food'>Mark as Served</label>
                             <input type="radio" onChange={handleChange} name="serveStatus" id="servedfood" value="Served" required />
 
                             <input type="submit" className='servefood-btn' value="Serve Food" />
