@@ -96,11 +96,11 @@ const DistributeFood = () => {
                     <div className="serchstudent py-5">
                         <h3>Select and Distribute Student Food</h3>
                         <form className='distribute-form py-4' onSubmit={distributeSubmit}>
-                            <h4 className='student-name'>Student Name: <input type="text" name='studentName' defaultValue={student[0].fullName} /></h4>
+                            <h4 className='student-name'>Student Name: {student[0].fullName} </h4>
 
-                            <p className='student-class'>Class: <input type="text" name='studentClass' defaultValue={student[0].class} /></p>
+                            <p className='student-class'>Class: {student[0].class}</p>
 
-                            <p className='student-class'>Roll: <input type="text" name='studentRoll' defaultValue={student[0].roll} /></p>
+                            <p className='student-class'>Roll: {student[0].roll}</p>
 
                             <p className='student-shift'>Select Shift:</p>
                             <select name="shift" id="shift" onChange={handleChange} className='shift-select' required>
