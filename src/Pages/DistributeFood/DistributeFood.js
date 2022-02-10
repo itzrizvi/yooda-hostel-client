@@ -59,6 +59,7 @@ const DistributeFood = () => {
 
     // Serach by Roll Function
     const handleSearch = (e) => {
+        setStudent(null)
         e.preventDefault();
         const url = `https://shielded-scrubland-37581.herokuapp.com/Student/${searchRoll}`;
         fetch(url)

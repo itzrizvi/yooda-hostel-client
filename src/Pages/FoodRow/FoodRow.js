@@ -1,8 +1,16 @@
 import { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 
 const FoodRow = ({ singleFood }) => {
-    // state For update input
-    const [isEdit, setIsEdit] = useState(false);
+
+    // Bootstrap Modal Open Close State
+    const [show, setShow] = useState(false);
+    // Bootstrap Modal Open Close Function
+    const handleClose = () => setShow(false);
+    const handleShow = () => {
+        setShow(true)
+    };
+
     // Set Edited Food Name
     const [editFoodName, setEditFoodName] = useState('');
     // Set Edited Food Price
@@ -28,7 +36,7 @@ const FoodRow = ({ singleFood }) => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('Updated Food Data');
-                    setIsEdit(false)
+                    setShow(false);
                 }
             })
     }
@@ -53,16 +61,29 @@ const FoodRow = ({ singleFood }) => {
 
     return (
         <tr>
-            {isEdit && <td>
-                <form className='foodName-edit' onSubmit={editFoodSubmit}>
-                    <input type="text" onChange={(e) => setEditFoodName(e.target.value)} placeholder='Update Food Name...' required />
-                    <input type="text" onChange={(e) => setEditFoodPrice(e.target.value)} placeholder='Update Food Price...' required />
-                    <input type="submit" value="Update" />
-                </form>
-            </td>}
-            <td style={{ fontWeight: '700' }}>{singleFood.foodItem} <button onClick={() => setIsEdit(true)} className='fooditem-edit'>Edit</button></td>
-            <td style={{ fontWeight: '700' }}>{singleFood.costPrice}TK  <button className='fooditem-edit' onClick={() => setIsEdit(true)}>Edit</button></td>
-            <td><button className='fooditem-delete' onClick={() => handleDelete(singleFood._id)}>Delete</button></td>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Update {singleFood.foodItem}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <form className='foodName-edit' onSubmit={editFoodSubmit}>
+                        <input type="text" onChange={(e) => setEditFoodName(e.target.value)} placeholder='Update Food Name...' required />
+                        <input type="text" onChange={(e) => setEditFoodPrice(e.target.value)} placeholder='Update Food Price...' required />
+                        <input type="submit" className='food-update-btn' value="Update" />
+                    </form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            <td style={{ fontWeight: '700' }}>{singleFood.foodItem} </td>
+            <td style={{ fontWeight: '700' }}>{singleFood.costPrice}TK </td>
+            <td>
+                <Button className='fooditem-edit-modal' onClick={() => handleShow()}>Edit</Button>
+                <Button className='fooditem-delete-modal' onClick={() => handleDelete(singleFood._id)}>Delete</Button>
+            </td>
         </tr>
     );
 };

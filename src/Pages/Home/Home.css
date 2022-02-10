@@ -124,6 +124,8 @@ h2.student-table-title {
 
 
 .studentdataedit-btn,
+.fooditem-edit-modal,
+.fooditem-delete-modal,
 .studentdatadelete-btn{
     text-align: center !important;
     padding: 3px 15px !important;
@@ -263,6 +265,39 @@ input.servefood-btn {
 }
 
 input.servefood-btn:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #2e2e2e;
+    color: #2e2e2e;
+}
+
+
+/* FOOD EDIT FORM */
+form.foodName-edit {
+    width: 90%;
+    margin: auto;
+}
+
+form.foodName-edit input {
+    width: 80%;
+    margin: auto;
+    display: block;
+    margin-bottom: 14px;
+    outline: none;
+    border: 1px solid #2e2e2e;
+    padding: 4px 10px;
+}
+
+input.food-update-btn {
+    background: #2e2e2e;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid transparent;
+    transition: .3s;
+}
+
+input.food-update-btn:hover {
     background-color: #FFFFFF;
     border: 1px solid #2e2e2e;
     color: #2e2e2e;
